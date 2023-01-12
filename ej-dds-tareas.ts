@@ -4,3 +4,8 @@ class Trabajador {
     this.sueldoPorHora = sueldoPorHora;
   }
 }
+
+interface Tarea {
+  obtenerHorasNecesarias(): Number;
+  obtenerCosto(): Number;
+}
