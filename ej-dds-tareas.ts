@@ -29,3 +29,20 @@ class Simple implements Tarea {
     return sueldoTotalEmpleados + sueldoTotalResponsable + this.costoDeInfraestructura;
   }
 }
+
+class Integracion implements Tarea {
+  constructor(cantidadEstimadaHoras: Number, responsable: Object, empleadosAsignados: Array<Object>, listadoDeSubtareas: Array<Object>) {
+    this.cantidadEstimadaHoras = cantidadEstimadaHoras;
+    this.responsable = responsable;
+    this.empleadosAsignados = empleadosAsignados;
+    this.listadoDeSubtareas = listadoDeSubtareas;
+  }
+  
+  obtenerHorasNecesarias() {
+
+  }
+  
+  obtenerCosto() {
+
+  }
+}
