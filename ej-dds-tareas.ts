@@ -31,8 +31,7 @@ class Simple implements Tarea {
 }
 
 class Integracion implements Tarea {
-  constructor(cantidadEstimadaHoras: Number, responsable: Object, empleadosAsignados: Array<Object>, listadoDeSubtareas: Array<Object>) {
-    this.cantidadEstimadaHoras = cantidadEstimadaHoras;
+  constructor(responsable: Object, empleadosAsignados: Array<Object>, listadoDeSubtareas: Array<Object>) {
     this.responsable = responsable;
     this.empleadosAsignados = empleadosAsignados;
     this.listadoDeSubtareas = listadoDeSubtareas;
