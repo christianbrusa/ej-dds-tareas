@@ -43,7 +43,8 @@ class Integracion implements Tarea {
     this.listadoDeSubtareas.forEach(subTarea => {
       horasTotalDeSubtareas += subTarea.obtenerHorasNecesarias();
     });
-    return horasTotalDeSubtareas;
+    let horasDePlanificacion = Math.floor(horasTotalDeSubtareas/8);
+    return horasTotalDeSubtareas + horasDePlanificacion;
   }
   
   obtenerCosto() {
