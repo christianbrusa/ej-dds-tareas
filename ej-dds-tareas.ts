@@ -19,7 +19,7 @@ class Simple implements Tarea {
   }
   
   obtenerHorasNecesarias() {
-
+    return this.cantidadEstimadaHoras / this.empleadosAsignados.length;
   }
   
   obtenerCosto() {
