@@ -47,6 +47,11 @@ class Integracion implements Tarea {
   }
   
   obtenerCosto() {
-
+    let bonusResponsable = (this.responsable.sueldoPorHora * 10 / 100) * this.obtenerHorasNecesarias();
+    let costoTotalDeSubtareas = 0;
+    this.listadoDeSubtareas.forEach(subTarea => {
+      costoTotalDeSubtareas += subTarea.obtenerCosto();
+    });
+    return costoTotalDeSubtareas + bonusResponsable;
   }
 }
