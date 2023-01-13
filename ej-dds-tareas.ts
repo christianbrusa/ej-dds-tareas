@@ -12,7 +12,7 @@ interface Tarea {
 }
 
 class Simple implements Tarea {
-  constructor(cantidadEstimadaHoras: Number, responsable: Object, empleadosAsignados: Array<Object>, costoDeInfraestructura: Number) {
+  constructor(cantidadEstimadaHoras: Number, responsable: Trabajador, empleadosAsignados: Array<Trabajador>, costoDeInfraestructura: Number) {
     this.cantidadEstimadaHoras = cantidadEstimadaHoras;
     this.responsable = responsable;
     this.empleadosAsignados = empleadosAsignados;
@@ -31,9 +31,8 @@ class Simple implements Tarea {
 }
 
 class Integracion implements Tarea {
-  constructor(responsable: Object, empleadosAsignados: Array<Object>, listadoDeSubtareas: Array<Object>) {
+  constructor(responsable: Trabajador, listadoDeSubtareas: Array<Trabajador>) {
     this.responsable = responsable;
-    this.empleadosAsignados = empleadosAsignados;
     this.listadoDeSubtareas = listadoDeSubtareas;
   }
   
@@ -62,7 +61,7 @@ let oscarsito = new Trabajador(45);
 
 let tarea1 = new Simple(30, oscarsito, [pepito, juancito], 300);
 let tarea2 = new Simple(20, oscarsito, [juancito], 150);
-let tarea3 = new Integracion(oscarsito, [juancito], [tarea1, tarea2]);
+let tarea3 = new Integracion(oscarsito, [tarea1, tarea2]);
 
 tarea1.obtenerHorasNecesarias();
 tarea2.obtenerHorasNecesarias();
