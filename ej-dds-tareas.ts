@@ -24,7 +24,7 @@ class Simple implements Tarea {
   }
   
   obtenerCosto() {
-    let sueldoTotalEmpleados = (this.cantidadEstimadaHoras / this.empleadosAsignados.length) * _.sum(this.empleadosAsignados.map(empleado => empleado.sueldoPorHora));
+    let sueldoTotalEmpleados = (this.cantidadEstimadaHoras / this.empleadosAsignados.length) * _.sumBy(this.empleadosAsignados, empleado => empleado.sueldoPorHora);
     let sueldoTotalResponsable = this.cantidadEstimadaHoras * this.responsable.sueldoPorHora;
     return sueldoTotalEmpleados + sueldoTotalResponsable + this.costoDeInfraestructura;
   }
