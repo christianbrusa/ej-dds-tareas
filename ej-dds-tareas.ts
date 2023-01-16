@@ -49,18 +49,4 @@ class Integracion implements Tarea {
   }
 }
 
-let juancito = new Trabajador(30);
-let pepito = new Trabajador(15);
-let oscarsito = new Trabajador(45);
-
-let tarea1 = new Simple(30, oscarsito, [pepito, juancito], 300);
-let tarea2 = new Simple(20, oscarsito, [juancito], 150);
-let tarea3 = new Integracion(oscarsito, [tarea1, tarea2]);
-
-tarea1.obtenerHorasNecesarias();
-tarea2.obtenerHorasNecesarias();
-tarea3.obtenerHorasNecesarias();
-
-tarea1.obtenerCosto();
-tarea2.obtenerCosto();
-tarea3.obtenerCosto();
+module.exports = { Trabajador, Simple, Integracion };
