@@ -16,6 +16,12 @@ interface Tarea {
 
 class Simple implements Tarea {
   constructor(cantidadEstimadaHoras: Number, responsable: Trabajador, empleadosAsignados: Array<Trabajador>, costoDeInfraestructura: Number) {
+    if(cantidadEstimadaHoras <= 0){
+      throw new Error("La cantidad estimada de horas de una tarea deber ser mayor a cero");
+    }
+    if(costoDeInfraestructura < 0){
+      throw new Error("El costo de infraestructura de una tarea debe ser mayor o igual a cero");
+    }
     this.cantidadEstimadaHoras = cantidadEstimadaHoras;
     this.responsable = responsable;
     this.empleadosAsignados = empleadosAsignados;
