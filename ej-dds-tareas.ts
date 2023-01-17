@@ -2,6 +2,9 @@ import _ from "lodash";
 
 class Trabajador {
   constructor(sueldoPorHora: Number) {
+    if(sueldoPorHora <= 0){
+      throw new Error("El sueldo por hora de un trabajador debe ser positivo");
+    }
     this.sueldoPorHora = sueldoPorHora;
   }
 }
