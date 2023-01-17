@@ -20,3 +20,16 @@ describe("Se desea saber las horas necesarias para finalizar una tarea", () => {
         });
     });
 });
+
+describe("Se desea saber el costo de una tarea", () => {
+    describe("- Si es una tarea simple, deberia ser el costo de infraestructura mas los salarios de los trabajadores asignados", () => {
+        it("El costo para la tarea1 deberia ser: $2550", () => {
+            tarea1.obtenerCosto().should.be.eql(2550);
+        });
+    });
+    describe("- Si es una tarea de integración, deberia ser la suma de los costos de sus subtareas mas un bonus que se le paga al responsable que equivale al 10% de su sueldo", () => {
+        it("El costo para la tarea2 (que contiene como subtarea unicamente la tarea1) deberia ser: $2698.5", () => {
+            tarea2.obtenerCosto().should.be.eql(2698.5);
+        });
+    });
+});
